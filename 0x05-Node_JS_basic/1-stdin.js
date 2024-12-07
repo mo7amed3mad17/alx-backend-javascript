@@ -8,12 +8,12 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', (input) => {
   const name = input.trim();
   process.stdout.write(`Your name is: ${name}\n`);
-  // Close the stdin stream to end the program
+  process.stdout.write('This important software is now closing\n');
   process.stdin.pause();
 });
 
 // Handle program termination (e.g., when the user presses Ctrl+C)
 process.on('SIGINT', () => {
-  process.stdout.write('This important software is now closing\n');
+  process.stdout.write('\nThis important software is now closing\n');
   process.exit();
 });
